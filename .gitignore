@@ -1,0 +1,14 @@
+_site/
+.sass-cache/
+.jekyll-metadata
+
+# Others
+/vendor/*
+data/
+plugins/
+*.zip
+*.phar
+composer.lock
+node_modules
+tests
+__*
