@@ -19,3 +19,4 @@ Parvula wants to stay **simple** but also **flexible**. Plenty of CMS's already 
  - Free and open source
  - Flexible (can be customized and extended easily)
  - Simple and intuitive (comprehensible functions and variable names, straightforward documentation)
+ - With a real and complete API

@@ -22,7 +22,7 @@ Code of a basic plugin:
 <?php
 namespace Plugin\MyPlugin;
 
-use Parvula\Core\Plugin;
+use Parvula\Plugin;
 
 class MyPlugin extends Plugin {
 	// ...
@@ -32,36 +32,36 @@ class MyPlugin extends Plugin {
 
 # The plugin class
 
-Each plugin should inherit the Plugin class (`Parvula\Core\Plugin`).
+Each plugin should inherit the Plugin class (`Parvula\Plugin`).
 
 The Plugin class has some useful method to help you to develop a new plugin easily.
 
 {:.table .table-striped}
-| Function              | Description |
-| --------------------- | ----------- |
-| `getPluginPath()`     | Get the current plugin path (useful for the backend/php part) |
-| `getPluginUri()`      | Get the current plugin URI (useful for the client/view part) |
-| `appendToHeader()`    | Append string to the header element (`<head>`) |
-| `appendToBody()`      | Append string to the header element (`<body>`) |
+| Function                      | Description |
+| ----------------------------- | ----------- |
+| `getPath()`                   | Get the current plugin path (useful for the backend/php part) |
+| `getUri()`                    | Get the current plugin URI (useful for the client/view part) |
+| `appendToHeader($html, $add)` | Append string to the header element (`<head>`) |
+| `appendToBody($html, $add)`   | Append string to the header element (`<body>`) |
 
 ## The plugin callbacks
 
 Each plugin also have a "cycle of live". Each time, those callbacks functions will be called.
 
 {:.table .table-striped}
-| Callback function          | Description |
-| ---------------------      | ----------- |
-| `onBootstrap(Parvula $app)` | The first function to be called, useful to get services in $app.
-| `onLoad()`                 | |
-| `onRouter(Router $router)` | To handle the router. Useful to add or override routes |
+| Callback function               | Description |
+| ---------------------           | ----------- |
+| `onBootstrap(Parvula $app)`     | The first function to be called, useful to get services in $app.
+| `onLoad()`                      | On load |
+| `onRouter(Router $router)`      | To handle the router. Useful to add or override routes |
 | `onDispatch(string $method, string $uri)` | |
-| `onUri(string $uri)`       | ex: `/pictures/islands?test` //TODO check |
-| `onSlug(string $slug)`     | ex: `pictures/islands` |
-| `onPage(Page $page)`       | When the page mapped to the slug is loaded |
-| `onPreRender(string $layout)` | Before the layout is rendered |
-| `onPostRender(string $output)` | After the layout is rendered |
-| `on404(Page $page)`        | When the page is not found |
-| `onEnd()`                  | The last callback called |
+| `onUri(string $uri)`            | ex: `/pictures/islands?test` //TODO check |
+| `onSlug(string $slug)`          | ex: `pictures/islands` |
+| `onPage(Page $page)`            | When the page mapped to the slug is loaded |
+| `onPreRender(string $layout)`   | Before the layout is rendered |
+| `onPostRender(string $output)`  | After the layout is rendered |
+| `on404(Page $page)`             | When the page is not found |
+| `onEnd()`                       | The last callback called |
 
 ## Hello world example
 
@@ -71,7 +71,7 @@ If we want to add a route (`/hello`):
 <?php
 namespace Plugin\MyPlugin;
 
-use Parvula\Core\Plugin;
+use Parvula\Plugin;
 
 class MyPlugin extends Plugin
 {
@@ -95,7 +95,7 @@ If we want to change the content of the page:
 <?php
 namespace Plugin\MyPlugin2;
 
-use Parvula\Core\Plugin;
+use Parvula\Plugin;
 
 class MyPlugin2 extends Plugin {
 	function onPage(&$page) {

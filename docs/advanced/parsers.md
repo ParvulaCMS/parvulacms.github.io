@@ -14,7 +14,7 @@ Open `system.yaml` (in `data/config`) and edit the field `headParser` to use the
 
 ```yaml
 # Class to parse pages (must implement ContentParserInterface), can be null
-headParser: \Parvula\Core\Parser\Json
+headParser: \Parvula\Parser\Json
 ```
 
 You can now use Json in the front-matter of your pages. For example :
@@ -44,7 +44,7 @@ In `Parvula/Core/Parser/` create a new file called `Ini.php`. Create the new cla
 
 ```php
 <?php
-namespace Parvula\Core\Parser;
+namespace Parvula\Parser;
 class Ini implements ParserInterface {
 	/**
 	 * Parse ini
@@ -62,7 +62,7 @@ class Ini implements ParserInterface {
 You can now use your new class. Change `headParser` in `system.yaml` to use your yout Ini class.
 
 ```yaml
-headParser: \Parvula\Core\Parser\Ini
+headParser: \Parvula\Parser\Ini
 ```
 
 You are now able to write your front-matter in the ini format.
