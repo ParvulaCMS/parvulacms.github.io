@@ -40,3 +40,9 @@ The structure of your sites is then:
 │   └── static
 ...
 ```
+
+
+## Shared plugins and themes
+
+Since Parvula 0.7.2 it is also possible to share the themes and plugins to create more advanced structures (for example the core (`app/`) is not public but the themes and plugins yes.).
+You can override the `_RESOURCE_ROOT_` constant to change the path of `themes/` and `plugins/`.

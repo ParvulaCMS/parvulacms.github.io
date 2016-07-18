@@ -8,7 +8,7 @@ section: content
 ├── Parvula        // Source files
 ├── data           // Data files
 │   ├── config     // Parvula configuration files
-│   ├── logs       // Log files (@next version)
+│   ├── logs       // Log files
 │   ├── pages      // Pages
 │   └── users      // Users
 ├── plugins        // Contains your plugins
